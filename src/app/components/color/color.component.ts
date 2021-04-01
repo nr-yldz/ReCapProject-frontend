@@ -40,7 +40,7 @@ export class ColorComponent implements OnInit {
     }
   }
 
-  getAllCarsClass(){
+  getAllColorClass(){
     if(!this.currentColor){
       return "list-group-item list-group-item-warning"
     }else{

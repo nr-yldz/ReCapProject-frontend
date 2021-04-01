@@ -4,7 +4,9 @@ import { CardetailComponent } from './components/cardetail/cardetail.component';
 
 const routes: Routes = [
   {path:"",component:CardetailComponent},
-  {path:"cars",component:CardetailComponent}
+  {path:"cars",component:CardetailComponent},
+  {path:"cars/brands/:brandId", component:CardetailComponent},
+  {path:"cars/colors/:colorId", component:CardetailComponent}
 ];
 
 

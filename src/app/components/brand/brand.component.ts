@@ -37,7 +37,7 @@ export class BrandComponent implements OnInit {
     }
   }
 
-  getAllCarsClass(){
+  getAllBrandClass(){
     if(!this.currentBrand){
       return "list-group-item list-group-item-warning"
     }else{
