@@ -1,1 +1,20 @@
-<p>rental works!</p>
+<h5><p class="font-weight-bold">ARABA KİRALAMA LİSTESİ</p></h5>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Marka</th>
+      <th>Müşteri</th>
+      <th>Şirket Adı</th>
+      <th>Kiralama Tarihi</th>
+      <th>Teslim Tarihi</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let rentaldetail of rentaldetails">
+    <td>{{ rentaldetail.brandName }}</td>
+    <td>{{ rentaldetail.firstName + ' ' + rentaldetail.lastName }}</td>
+    <td>{{ rentaldetail.companyName }}</td>
+    <td>{{ rentaldetail.rentDate }}</td>
+    <td>{{ rentaldetail.returnDate }}</td>
+  </tr>
+</table>

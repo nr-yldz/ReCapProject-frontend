@@ -1,1 +1,29 @@
-<p>cardetail works!</p>
+<div class="row">
+  <div *ngFor="let car of cardetails">
+    <img  src="{{imageBasePath}}{{car.imagePath}}" class="rounded mx-auto d-block" alt="thumbnail" width="600" height="400"><br><br>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Marka</th>
+          
+          <th scope="col">Renk</th>
+          
+          <th scope="col">Günlük Fiyat: </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{car.id}}</th>
+          <td>{{car.brandName}}</td>
+          <td>{{car.colorName}}</td>
+          <td>{{car.dailyPrice}} ₺</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+  </div>
+  <br>
+  

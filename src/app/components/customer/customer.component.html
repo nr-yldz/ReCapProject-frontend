@@ -1,7 +1,14 @@
-<ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
-  </ul>
+<h5><p class="font-weight-bold">MÜŞTERİLER</p></h5>
+<table class="table">
+  <thead>
+    <tr>
+      <th class="table-danger" >Müşteri</th>
+      <th class="table-danger" >Şirket Adı</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let customerdetail of customerdetails">
+    <td>{{ customerdetail.firstName + ' ' + customerdetail.lastName }}</td>
+    <td>{{ customerdetail.companyName }}</td>
+  </tr>
+</table>
