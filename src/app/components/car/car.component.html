@@ -1,25 +1,36 @@
 <div * ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-  <h5><p class="font-weight-bold">ARABALAR</p></h5>
-<table *ngIf="dataLoaded==true" class="table">
-  <thead>
-    <tr>
-      <th class="table-primary">Id</th>
-      <th class="table-primary">Marka Id</th>
-      <th class="table-primary">Color Id</th>
-      <th class="table-primary">Model Yılı</th>
-      <th class="table-primary">Günlük Fiyat</th>
-      <th class="table-primary">Açıklamalar</th>
-    </tr>
-  </thead>
-
-  <tr *ngFor="let car of cars">
-    <td>{{ car.id }}</td>
-    <td>{{ car.brandId }}</td>
-    <td>{{ car.colorId }}</td>
-    <td>{{ car.modelYear }}</td>
-    <td>{{ car.dailyPrice }}</td>
-    <td>{{ car.descriptions }}</td>
-  </tr>
-</table>
+ 
+  <div class="row">
+    <div *ngFor="let cardetail of cardetails">
+      <img  src="{{imageBasePath}}{{cardetail.imagePath}}" class="rounded mx-auto d-block" alt="thumbnail" width="500" height="300"><br><br>
+      <table class="table table-Secondary table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marka</th>
+            <th scope="col">Renk</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Günlük Fiyat: </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{cardetail.id}}</th>
+            <td>{{cardetail.brandName}}</td>
+            <td>{{cardetail.colorName}}</td>
+            <td>{{cardetail.descriptions}}</td>
+            <td>{{cardetail.dailyPrice}} ₺</td>
+            <td>    
+            <div class="d-grid gap-1 col-4 mx-auto">
+              <button routerLink="/cars/rental/{{cardetail.id}}" class="btn btn-success" type="button">Kirala</button>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <br>
+    

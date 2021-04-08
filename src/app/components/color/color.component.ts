@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -12,11 +13,9 @@ export class ColorComponent implements OnInit {
   colors:Color[]=[];
   currentColor:Color;
   nullColor:Color;
+  filterText="";
 
-  constructor(private colorService:ColorService) { }
-
-
-
+  constructor(private colorService:ColorService,private toastrService:ToastrService,) { }
 
   ngOnInit(): void {
     this.getColors();
@@ -34,7 +33,7 @@ export class ColorComponent implements OnInit {
   }
   getCurrentColorClass(color:Color){
     if(color == this.currentColor){
-      return "list-group-item  list-group-item-warning"
+      return "list-group-item list-group-item-warning"
     }else{
       return "list-group-item"
     }
@@ -52,5 +51,3 @@ export class ColorComponent implements OnInit {
     this.currentColor=this.nullColor;
   }
 }
-
-

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { CustomerDetail } from 'src/app/models/customerDetail';
 import { CustomerService } from 'src/app/services/customer.service';
@@ -13,7 +14,7 @@ export class CustomerComponent implements OnInit {
   customers:Customer[]=[];
   customerdetails:CustomerDetail[]=[];
 
-  constructor(private customerService:CustomerService) { }
+  constructor(private customerService:CustomerService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getCustomerDetails();
