@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,12 @@ import { ColorFilterPipe } from './pipes/color-filter.pipe';
 
 import {ToastrModule} from "ngx-toastr";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { ColorUpdateComponent } from './components/color-update/color-update.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
 
 
 @NgModule({
@@ -39,6 +45,12 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CarFilterPipe,
     PaymentComponent,
     CartSummaryComponent,
+    BrandAddComponent,
+    ColorAddComponent,
+    ColorUpdateComponent,
+    BrandUpdateComponent,
+    CarUpdateComponent,
+    CarAddComponent,
 
   
   ],
