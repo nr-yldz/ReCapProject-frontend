@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr'
 import { Car } from 'src/app/models/car'
 import { CarDetail } from 'src/app/models/carDetail'
 import { CarService } from 'src/app/services/car.service'
+import { CartService } from 'src/app/services/cart.service'
 import { environment } from 'src/environments/environment'
 
 @Component({
@@ -20,7 +21,8 @@ export class CarComponent implements OnInit {
 
   constructor(
     private carService: CarService,
-    private activatedRoute: ActivatedRoute,private toastrService:ToastrService,
+    private activatedRoute: ActivatedRoute,private toastrService:ToastrService, 
+    private cartService:CartService
   ) {}
 
   ngOnInit(): void {
@@ -53,8 +55,9 @@ export class CarComponent implements OnInit {
     
     })
   }
-  rentTest(car:CarDetail){
-    this.toastrService.success("Kiralandı",car.brandName)
+  rentTest(cardetail:CarDetail){
+    this.toastrService.success("Kiralandı",cardetail.brandName)
+    this.cartService.addToCart(cardetail)
   }
   }
 

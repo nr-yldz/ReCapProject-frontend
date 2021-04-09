@@ -18,12 +18,13 @@ export class BrandComponent implements OnInit {
   constructor(private brandService: BrandService,private toastrService:ToastrService) {}
 
   ngOnInit(): void {
-    this.getBrands()
+    this.getBrands();
   }
 
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data
+      
     })
   }
 
