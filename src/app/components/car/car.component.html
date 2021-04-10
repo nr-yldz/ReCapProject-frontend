@@ -25,7 +25,8 @@
             <td>{{cardetail.dailyPrice}} ₺</td>
             <td>    
             <div class="d-grid gap-1 col-4 mx-auto">
-              <button (click)=rentTest(cardetail) class="btn btn-success" type="button">Kirala</button>
+               
+               <button type="button" class="btn btn-success" routerLink="rentals" (click)="rentTest(cardetail)">Kirala</button>
             </div></td>
           </tr>
         </tbody>

@@ -18,8 +18,6 @@
   </div>
 
   <div class="text-end">
-     <button *ngIf="id"  class="btn btn-sm btn-primary" [disabled]="addRentCarForm.invalid">
-        <i class="bi-credit-card-fill me-1"></i> Kirala
-     </button>
+   <button type="button" class="btn btn-success" routerLink="payment" (click)="setRentingCar">Ödemeye geç</button>
   </div>
 </form>

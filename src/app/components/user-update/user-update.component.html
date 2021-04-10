@@ -1,0 +1,52 @@
+<div class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Araç Marka Güncelle</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="userUpdateForm">
+
+            <label for="id">Id</label>
+            <div class="form-group">
+              <input type="number" id="id" 
+              formControlName="id" class="form-control" 
+              placeholder="Id" />
+            </div>
+
+            <label for="email">Email</label>
+            <div class="form-group">
+              <input type="text" id="email" 
+              formControlName="email" class="form-control" 
+              placeholder="email" />
+            </div>
+
+            <label for="firstName">Adınız</label>
+            <div class="form-group">
+              <input type="text" id="firstName" 
+              formControlName="firstName" class="form-control" 
+              placeholder="Ad" />
+            </div>
+
+            <label for="lastName">Soyadınız</label>
+            <div class="form-group">
+              <input type="text" id="lastName" 
+              formControlName="lastName" class="form-control" 
+              placeholder="Soyad" />
+            </div>
+
+            <label for="password">Parola</label>
+            <div class="form-group">
+              <input type="text" id="password" 
+              formControlName="password" class="form-control" 
+              placeholder="parola" />
+            </div>
+
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-fill btn-dark" (click)="update()">Güncelle</button>
+        </div>
+      </div>
+    </div>
+  </div>

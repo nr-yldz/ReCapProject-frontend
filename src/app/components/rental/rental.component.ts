@@ -76,7 +76,7 @@ export class RentalComponent implements OnInit {
     this.rentalService.setRentingCar(this.rentals)
 
     this.toastrService.success('Ödeme sayfasına yönlendiriliyorsunuz')
-    return this.router.navigate(['payment/' + this.id])
+    return this.router.navigate(['payment'])
   }
 
   checkCarRentable() {

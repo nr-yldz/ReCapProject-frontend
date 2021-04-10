@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { ToastrService } from 'ngx-toastr'
 import { Car } from 'src/app/models/car'
 import { CarDetail } from 'src/app/models/carDetail'
@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,private toastrService:ToastrService, 
-    private cartService:CartService
+    private cartService:CartService, private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -57,6 +57,7 @@ export class CarComponent implements OnInit {
   }
   rentTest(cardetail:CarDetail){
     this.toastrService.success("Kiralandı",cardetail.brandName)
+    this.router.navigate(["rentals"])
     this.cartService.addToCart(cardetail)
   }
   }
