@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,7 +14,7 @@ export class UserUpdateComponent implements OnInit {
   userUpdateForm: FormGroup;
 
   constructor(private formBuilder:FormBuilder, private userService:UserService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService, private router:Router) { }
 
   ngOnInit(): void {
     this.createUserUpdateForm();
@@ -35,6 +36,7 @@ export class UserUpdateComponent implements OnInit {
       this.userService.update(userModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Başarılı');
+          this.router.navigate(["cars"])
         },
         (responseError) => {
           if (responseError.error.ValidationErrors.length > 0) {

@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/models/user';
@@ -12,27 +13,40 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NaviComponent implements OnInit {
 
-  users:User[]
+  users:User[];
+  userName:string;
 
-  constructor(private localStorage:LocalStorageService,
+  constructor(private localStorageService:LocalStorageService,
     private toast:ToastrService,
     private authService:AuthService,
     private userService:UserService) { }
 
   ngOnInit(): void {
+    this.getUsers();
   }
-   logout(){
-    this.localStorage.clean()
-    this.toast.info("çıkış yapıldı","işlem başarılı")
+  getUsers() {
+    let mail = this.localStorageService.getItem("email")
+    if (mail != null) {
+      this.userService.getByEmail(mail).subscribe(response => {
+        console.log(response.data);
+        this.users = response.data
+      })
+    }
   }
+   
+
+  logout() {
+    this.authService.logOut()
+    window.location.reload()
+  }
+
   isAuthenticated(){
-    return this.authService.isAuthenticated()
-  }
-  getById(){
-    this.userService.getById(Number(this.localStorage.getItem('id'))).subscribe(r=>{
-      this.users = r.data
-      console.log(this.users)
-    })
+    if(this.authService.isAuthenticated()){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
 }

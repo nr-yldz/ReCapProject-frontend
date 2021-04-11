@@ -10,19 +10,17 @@ export class LocalStorageService {
    
   }
 
-  getItem(key : string){
-    return localStorage.getItem(key)
+  setItem(key:string,value:any){
+    localStorage.setItem(key,value);
   }
 
-  setItem(key: string, value: string){
-    localStorage.setItem(key, value)
+  getItem(key:string){
+    return localStorage.getItem(key);
   }
-
-  clean(){
-    localStorage.clear()
+  clear(){
+    localStorage.clear();
   }
-
-  removeItem(key: string){
-    localStorage.removeItem(key)
+  removeItem(key:string){
+    localStorage.removeItem(key);
   }
 }

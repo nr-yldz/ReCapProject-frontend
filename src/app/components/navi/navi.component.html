@@ -35,17 +35,16 @@
 
       <div class="d-flex" *ngIf="isAuthenticated()">
         
-        <div class="dropdown me-1" >
-          <button type="button"*ngFor="let user of users" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-            {{user.firstName}} {{user.lastName}}
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-             <li><a class="dropdown-item"(click)=logout() href="#">Çıkış Yap</a></li>
-            <li><a class="dropdown-item" routerLink="users/update"href="#">Bilgileri Güncelle</a></li>
-          </ul>
-        </div>
-      </div>
+        <button class="btn dropdown-toggle btn-info btn-sm" *ngFor="let user of users" data-bs-toggle="dropdown">
+          
+          {{ user.firstName }}
+       </button>
+        
+        <button type="button" class="btn btn-warning"routerLink="users/update">Bilgilerimi Güncelle</button>
 
+        <button type="button" class="btn btn-warning"(click)="logout()">Çıkış Yap</button>
+      </div>            
     </div>
   </div>
 </nav>
+
