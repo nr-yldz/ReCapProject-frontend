@@ -21,6 +21,10 @@
 ### 6)Kayıt ol ve Giriş yap ekranları getirildi.
 ![Ekran görüntüsü 2021-04-10 145751](https://user-images.githubusercontent.com/77545544/114282580-5d18d580-9a4d-11eb-8b9b-f29c09ee4c76.png)
 
+### 7)Giriş yapınca kullanıcı ismi getirildi.
+![son](https://user-images.githubusercontent.com/77545544/114320620-65d9dc00-9b1f-11eb-940a-5b2efdf26804.png)
+
+
 ## Backend kısmını [buradan](https://github.com/nr-yldz/ReCapProject) inceleyebilirsiniz.
 
 ## LinkedIn adresim için [tıklayınız](https://www.linkedin.com/in/nafiye-nur-y%C4%B1ld%C4%B1z-21a065190?lipi=urn%3Ali%3Apage%3Amessaging_thread%3BnFQ4RY8GTlKZ0vPnRwWCsw%3D%3D)
