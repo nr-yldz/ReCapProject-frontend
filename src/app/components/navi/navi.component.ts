@@ -1,8 +1,10 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Customer } from 'src/app/models/customer';
+import { CustomerDetail } from 'src/app/models/customerDetail';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { CustomerService } from 'src/app/services/customer.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,27 +15,20 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NaviComponent implements OnInit {
 
-  users:User[];
-  userName:string;
+user:User;
 
   constructor(private localStorageService:LocalStorageService,
     private toast:ToastrService,
     private authService:AuthService,
-    private userService:UserService) { }
+    private userService:UserService, private customerService:CustomerService) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getName();
   }
-  getUsers() {
-    let mail = this.localStorageService.getItem("email")
-    if (mail != null) {
-      this.userService.getByEmail(mail).subscribe(response => {
-        console.log(response.data);
-        this.users = response.data
-      })
-    }
+  getName(){
+    
+    return this.authService.getName()
   }
-   
 
   logout() {
     this.authService.logOut()
@@ -48,6 +43,7 @@ export class NaviComponent implements OnInit {
       return false;
     }
   }
+
 
 }
 

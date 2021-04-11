@@ -23,5 +23,13 @@ export class CustomerService {
     let newPath= this.apiUrl + "customers/getcustomerdetails";
     return  this.httpClient.get<ListResponseModel<CustomerDetail>>(newPath);
   }
+  getByCustomerId(id:number): Observable<ListResponseModel<Customer>> {
+    let newPath= this.apiUrl + "customers/getbyid?colorId="+id
+    return  this.httpClient.get<ListResponseModel<Customer>>(newPath);
+  }
+  getCustomersByMail(email:string): Observable<ListResponseModel<CustomerDetail>> {
+    let newPath= this.apiUrl + "customers/getcustomersbymail?email="+email
+    return  this.httpClient.get<ListResponseModel<CustomerDetail>>(newPath);
+  }
 
 }

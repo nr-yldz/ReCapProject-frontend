@@ -7,11 +7,14 @@ import { RegisterModel } from '../models/registerModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { LocalStorageService } from './local-storage.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  jwtHelper = new JwtHelperService();
 
   apiUrl = 'https://localhost:44328/api/auth';
 
@@ -28,7 +31,7 @@ export class AuthService {
   
 
   logOut(){
-    this.localStorageService.clear();
+    this.localStorageService.cleanLocal();
      this.toastrService.success("Çıkış Yapılıyor");
      setTimeout(()=>{
        window.location.href="";
@@ -44,4 +47,13 @@ export class AuthService {
       return false;
     }
   }
+  getName() {
+    let token:string=localStorage.getItem("token")
+    if (token) {
+      let decoded = this.jwtHelper.decodeToken(token)
+      let userName = Object.keys(decoded).filter(x => x.endsWith("/name"))[0];
+      return decoded[userName];
+    }
+    return null
+}
 }
