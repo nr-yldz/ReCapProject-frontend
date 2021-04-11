@@ -1,27 +1,28 @@
-# Rentacar
+# ReCapProject Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+## Geliştirmekte olduğum araba kiralama sistemimin frontend kısmını inceleyebilirsiniz.
 
-## Development server
+### 1)Filtreye göre arama yapma eklendi.
+![angular6](https://user-images.githubusercontent.com/77545544/114282560-4ecab980-9a4d-11eb-97a6-fc8111c9258a.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### 2)Araba kiralama eklendi.
+![angular10](https://user-images.githubusercontent.com/77545544/114282572-55f1c780-9a4d-11eb-95d8-48dd21b83c8b.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 3)Kiralama için tarih girilerek ödeme sayfasına yönlendirme gerçekleştirildi.
+![angular9](https://user-images.githubusercontent.com/77545544/114282694-0d86d980-9a4e-11eb-9ae4-88862a4e3500.png)
 
-## Build
+### 4)Kredi kartı bilgileri kullanıcıdan istendi.
+![angular3](https://user-images.githubusercontent.com/77545544/114282676-f3e59200-9a4d-11eb-93c5-f641db9b4a35.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### 5) Araba, renk ve marka ekleme güncelleme işlemleri eklendi.
+![angular11](https://user-images.githubusercontent.com/77545544/114282573-5722f480-9a4d-11eb-92af-51061ef4cb58.png)
 
-## Running unit tests
+### 6)Kayıt ol ve Giriş yap ekranları getirildi.
+![Ekran görüntüsü 2021-04-10 145751](https://user-images.githubusercontent.com/77545544/114282580-5d18d580-9a4d-11eb-8b9b-f29c09ee4c76.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Backend kısmını [buradan](https://github.com/nr-yldz/ReCapProject) inceleyebilirsiniz.
 
-## Running end-to-end tests
+## LinkedIn adresim için [tıklayınız](https://www.linkedin.com/in/nafiye-nur-y%C4%B1ld%C4%B1z-21a065190?lipi=urn%3Ali%3Apage%3Amessaging_thread%3BnFQ4RY8GTlKZ0vPnRwWCsw%3D%3D)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Email: nur.yalcin.a@gmail.com
